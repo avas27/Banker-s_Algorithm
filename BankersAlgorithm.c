@@ -3,7 +3,7 @@
 #include<pthread.h>
 #include<sys/types.h>
 #include<stdlib.h>
-int avasV1=0,n,x=0,n2,np,na,r=0,counter=0,count=0,avasRG=0,avasRGG=0,xx=1,tr,Ucount=0,Uflag=0;
+int avasV1=0,n,x=0,y=0,n2,np,na,r=0,counter=0,count=0,avasRG=0,avasRGG=0,xx=1,tr,Ucount=0,Uflag=0;
 int avas[10][10][10],avasAvail[10],avasAvail2[10],avasState[10],avasFormat[1][10][10],avasRR[1][0][10];
 void avasUI();
 void avas1();
@@ -200,6 +200,7 @@ for(int j=0;j<n;j++)
 {
 for(int i=0;i<np;i++)
 {
+if((avas[1][r][i]>=0)&&(avas[0][r][i]>=0))
 if(avas[1][r][i]<=avas[0][r][i])
 zz=1;
 else
@@ -230,11 +231,11 @@ for(int j=0;j<n;j++)
 for(int i=0;i<np;i++)
 {
 if((avas[2][r][i]>=0)&&(avas[2][r][i]<=avasAvail[i]))
-{x=1;}
+{x=1;++y;}
 else
 {x=0;}
 }
-if(x==1)
+if(x==1 && y==np)
 {
 avasState[kachra]=(r+1);
 kachra++;
@@ -244,10 +245,10 @@ avasAvail[k]+=avas[1][r][k];
 avas[2][r][k]=100;
 }
 }
+y=0;
 r++;
 }
 }
-
 for(int i=0;i<n;i++)
 {
 if(avasCheck1() || avasState[i]==0)

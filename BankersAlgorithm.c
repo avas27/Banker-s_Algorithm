@@ -98,6 +98,9 @@ printf("\n\t\tplease PRESS valid option\n");
 }
 void avas1()
 {
+counter=0;
+count=0;
+r=0;
 system("clear");
 printf("\n\t\t\tBanker's_Algorithm\n");
 printf("\t\t\tCSE-316 Project\n");
@@ -454,6 +457,9 @@ pthread_mutex_unlock(&lock);
 /////////////////////////////////////////////////////////////////avas 2019//////////////////////////////////////////////////////////////////
 void avasTHI()
 {
+counter=0;
+r=0;
+count=0;
 system("clear");
 printf("\n\t\t\tBanker's_Algorithm\n");
 printf("\t\t\tCSE-316 Project\n");
@@ -637,6 +643,7 @@ printf("\t\t_________________________________________\n");
 printf("\t\t-----------------------------------------\n");
 printf("\t\tPRESS (1) to REQUEST RESOURCES\n");
 printf("\t\tPRESS (2) to EXIT\n");
+printf("\t\tINPUT : ");
 int m;
 scanf("%d",&m);
 switch(m)
@@ -644,6 +651,8 @@ switch(m)
 case 1:
 avasRReq();
 break;
+case 2:
+exit(0);
 default:
 printf("Please enter VALID option\n");
 }
